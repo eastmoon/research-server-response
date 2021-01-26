@@ -16,8 +16,24 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// set cookie packages
+app.use(cookieParser());
+app.use(function (req, res, next) {
+  // check if client sent cookie
+  var cookie = req.cookies.cookieName;
+  if (cookie === undefined) {
+    // no: set a new cookie
+    res.cookie('cookieName', Math.random().toString().substring(2), { maxAge: 900000, httpOnly: true });
+    res.cookie('secValue', 1234567890, { maxAge: 900000, httpOnly: true})
+    console.log('Cookie created successfully');
+  } else {
+    // yes, cookie was already present
+    console.log('Cookie exists', cookie);
+  }
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -26,6 +42,7 @@ app.use('/users', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
