@@ -5,6 +5,8 @@
 + [HTTP cookies](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Cookies)
     - [node.js : set-cookies](https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_response_setheader_name_value)
         + [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+        + [express-session](https://www.npmjs.com/package/express-session)
+        + [cookie-parser和express-session中介軟體使用](https://www.mdeditor.tw/pl/pK63/zh-tw)
     - [Using HTTPOnly Cookie in GET request (Retrieve user info from server using user_id cookie)](https://stackoverflow.com/questions/51460607)
     - [Android: Understand Cookie and Session in Android’s Context](https://medium.com/cs-random-thoughts-on-tech/understand-cookie-and-session-in-androids-context-e1520718ccba)
     - [How do we handle Cookies in iOS? How do we set Cookies in different version of iOS?](https://medium.com/@ankit7282/how-do-we-handle-cookies-in-ios-how-do-we-set-cookies-in-different-version-of-ios-74425021f0c)
@@ -26,3 +28,7 @@ dockerw up
 dockerw down
 ```
 > 關閉啟動中的容器
+
+#### 測試 API
+
++ [API](http://localhost:8080/users)

@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -35,6 +36,14 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Set session packages
+app.use(session({
+  secret: '123456',
+  resave: false,
+  saveUninitialized: true
+}))
+
+// Set router
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
