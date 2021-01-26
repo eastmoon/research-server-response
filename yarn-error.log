@@ -1,0 +1,48 @@
+Arguments: 
+  /usr/local/bin/node /opt/yarn-v1.22.5/bin/yarn.js install
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  10.23.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/jade/-/jade-1.11.0.tgz: ENOENT: no such file or directory, open '/usr/local/share/.cache/yarn/v6/npm-jade-1.11.0-9c80e538c12d3fb95c8d9bb9559fa0cc040405fd-integrity/node_modules/jade/.yarn-tarball.tgz'
+
+npm manifest: 
+  {
+    "name": "node.application",
+    "version": "1.0.0",
+    "description": "node application demo code",
+    "scripts": {
+      "start": "node ./app/bin/www",
+      "build": "node main.js",
+      "test": "echo test node.js project"
+    },
+    "author": "jacky.chen",
+    "license": "MIT",
+    "dependencies": {
+      "cookie-parser": "~1.4.4",
+      "debug": "~2.6.9",
+      "express": "~4.16.1",
+      "http-errors": "~1.6.3",
+      "jade": "~1.11.0",
+      "morgan": "~1.9.1"
+    },
+    "devDependencies": {
+      "mongodb": "^3.4.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
